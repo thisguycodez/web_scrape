@@ -7,7 +7,7 @@ python - web scraping with python,beautiful soup, and mechanize. Getting started
 /////////////////////////////////
 step 1: 
    install beautiful soup(bs4) and mechanize -
-~#: pip3 install bs4 mechanize
+~#: pip3 install bs4 mechanize html2text
 
 {BeautifulSoup : HTML-Parser}
 {Mechanize: Browser Emulator}
@@ -20,7 +20,7 @@ step 2:
 -from urllib.request import urlopen
 -from bs4 import BeautifulSoup
 -from mechanize import Browser
-
+-from html2text import html2text
 
 /////////////////////////////////
 step 3: 
@@ -51,7 +51,8 @@ step 5:
 
 -html = BeautifulSoup(browser.response().read(), 'html.parser')
 
--list_tags = html.find_all('div', class_='a-section')
+body = html.find('body', class_="a-m-us")
+list_tags = body.find_all('div', class_="a-section")
 
 
 /////////////////////////////////
@@ -71,14 +72,21 @@ file.write(headers)
 	price = tag.find('span', class_="a-price")
 
 	cur_line = f"{item}, {price}"
-	print(cur_line)
+	cur_line = html2text(cur_line)
 
-	file.write(cur_line)
+
+	# avoiding 'None' values
+	if 'None' in cur_line:
+		continue
+	else:
+		print(cur_line)
+		file.write(cur_line)
 
 
 
 file.close()
 
+/////////////////////////////////
 
 
 *****CONGRATS YOU GOT A GREAT START ON WEB SCRAPPING*****
