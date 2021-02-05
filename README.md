@@ -3,7 +3,7 @@
 https://youtu.be/EWF32N_JYF0
 
 
-            ## STEPS
+## STEPS
 	    
 ___
 step 1: 
@@ -99,7 +99,7 @@ file.close()
 ___
 
 
-*****CONGRATS YOU GOT A GREAT START ON WEB SCRAPPING*****
-*****SEE HOW FAR YOU CAN GO AN SHARE IN THE COMMENTS*****
+#### CONGRATS YOU GOT A GREAT START ON WEB SCRAPPING
+#### SEE HOW FAR YOU CAN GO AN SHARE IN THE COMMENTS
 
-            ## STEPS
+## STEPS
